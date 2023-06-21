@@ -182,14 +182,13 @@ class Fighter extends Sprite {
     //this.jump_object();
     //console.log(this.position.y + this.height);
 
-    //if (this.position.y >= this.position_origin) {
-    //  this.position.y = this.position_origin;
-    //  this.height = this.height_origin;
-    //  this.width = this.width_origin;
-    //}
-    //console.log(this.width);
+    if (this.position.y >= this.position_origin) {
+      this.position.y = this.position_origin;
+      this.height = this.height_origin;
+      this.width = this.width_origin;
+    }
+    //console.log(this.position.y);
     //console.log(this.height);
-    console.log(this.position.y);
     if (this.position.y + this.height >= canvas.height - 120 - this.P) {
       this.velocity.y = 0;
       if (this.P === this.Ps[0].p) {
