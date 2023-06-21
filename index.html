@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Orbitron:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Game battle</title>
+  </head>
+  <body style="margin: 0; box-sizing: border-box; background-color: #353839">
+    <div style="position: relative" id="main">
+      <div
+        style="
+          position: absolute;
+          transform: translateX(-50%) translateY(50%);
+          left: 50%;
+        "
+        class="menu"
+      >
+        <div style="position: relative">
+          <img src="fight.jpg" alt="bg" />
+          <div
+            class="buttons"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <button
+              style="
+                cursor: pointer;
+                border-color: transparent;
+                border-radius: 100%;
+                background: rgb(255, 255, 255);
+                background: rgb(255, 255, 255);
+                background: radial-gradient(
+                  circle,
+                  rgba(255, 255, 255, 1) 0%,
+                  rgba(253, 29, 29, 1) 50%,
+                  rgba(0, 0, 0, 1) 90%
+                );
+                color: black;
+                text-align: center;
+                width: 100px;
+                height: 50px;
+                font-family: 'Orbitron', sans-serif;
+              "
+              class="play"
+            >
+              PLAY
+            </button>
+            <button
+              style="
+                cursor: pointer;
+                border-color: transparent;
+                border-radius: 100%;
+                background: red;
+                background: rgb(63, 94, 251);
+                background: radial-gradient(
+                  circle,
+                  rgba(63, 94, 251, 1) 0%,
+                  rgba(252, 70, 107, 1) 100%
+                );
+                color: black;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                width: 100px;
+                height: 50px;
+                font-family: 'Orbitron', sans-serif;
+              "
+              class="setting"
+            >
+              SETTING
+            </button>
+            <button
+              style="
+                cursor: pointer;
+                border-color: transparent;
+                border-radius: 100%;
+                background: rgb(34, 193, 195);
+                background: radial-gradient(
+                  circle,
+                  rgba(34, 193, 195, 1) 0%,
+                  rgba(172, 249, 45, 1) 100%
+                );
+                color: black;
+                text-align: center;
+                width: 100px;
+                height: 50px;
+                font-family: 'Orbitron', sans-serif;
+              "
+              class="info"
+            >
+              INFO
+            </button>
+          </div>
+        </div>
+      </div>
+      <div style="display: none" class="gameplay">
+        <div
+          style="
+            box-sizing: border-box;
+            padding-left: 150px;
+            padding-right: 150px;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: flex-end;
+              width: 100%;
+              height: 50px;
+              border: double whitesmoke;
+              background-color: black;
+            "
+          >
+            <div
+              class="P1"
+              style="
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 255, 0.815);
+              "
+            ></div>
+          </div>
+          <div
+            class="time"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: solid 10px transparent;
+              border-radius: 30px;
+              width: 10%;
+              background-color: black;
+              color: #fff;
+            "
+          ></div>
+          <div
+            style="
+              width: 100%;
+              border: double whitesmoke;
+              height: 50px;
+              background-color: black;
+            "
+          >
+            <div
+              class="P2"
+              style="
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 0, 0, 0.873);
+              "
+            ></div>
+          </div>
+        </div>
+        <canvas
+          style="
+            box-sizing: border-box;
+            padding-left: 120px;
+            padding-right: 120px;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            top: 10px;
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 1);
+            -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 1);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+          "
+          class="test"
+        ></canvas>
+        <div
+          class="over"
+          style="
+            width: 100%;
+            height: 100%;
+            color: white;
+            position: absolute;
+            align-items: center;
+            display: none;
+            left: 0;
+            justify-content: center;
+            top: 0;
+            background-color: transparent;
+            z-index: 998;
+          "
+        >
+          Game over
+        </div>
+        <div
+          class="over"
+          style="
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            z-index: 999;
+          "
+        ></div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+    integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="until.js"></script>
+  <script src="classses.js"></script>
+  <script src="menu.js"></script>
+  <script src="index.js"></script>
+</html>
