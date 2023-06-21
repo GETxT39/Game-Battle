@@ -32,7 +32,7 @@ function decreaseTimer() {
       determineWinner(player, enemy, timeout);
     }
   } else {
-    Etime.textContent = "";
+    Etime.textContent = "Time";
   }
 }
 function P(player) {
